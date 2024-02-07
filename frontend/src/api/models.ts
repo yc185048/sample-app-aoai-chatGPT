@@ -96,4 +96,5 @@ export type ErrorMessage = {
 
 export type FrontendSettings = {
     auth_enabled?: string | null;
+    survey_link?: string | null;
 }

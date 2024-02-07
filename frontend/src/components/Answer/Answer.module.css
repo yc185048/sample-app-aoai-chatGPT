@@ -37,7 +37,7 @@
 
 .answerDisclaimerContainer {
     justify-content: center;
-    display: flex;
+    display: inline-block;
 }
 
 .answerDisclaimer {

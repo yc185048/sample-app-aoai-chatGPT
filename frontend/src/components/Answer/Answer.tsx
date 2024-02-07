@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useContext, useEffect, useMemo, useState } from "react";
 import { useBoolean } from "@fluentui/react-hooks"
 import { FontIcon, Stack, Text } from "@fluentui/react";
 
@@ -6,6 +6,8 @@ import styles from "./Answer.module.css";
 
 import { AskResponse, Citation } from "../../api";
 import { parseAnswer } from "./AnswerParser";
+import { AppStateContext } from "../../state/AppProvider";
+
 
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
@@ -20,6 +22,9 @@ export const Answer = ({
     answer,
     onCitationClicked
 }: Props) => {
+    const appStateContext = useContext(AppStateContext)
+    const SURVEY_LINK = appStateContext?.state.frontendSettings?.survey_link;
+
     const [isRefAccordionOpen, { toggle: toggleIsRefAccordionOpen }] = useBoolean(false);
     const filePathTruncationLimit = 50;
 
@@ -93,6 +98,7 @@ export const Answer = ({
                 )}
                 <Stack.Item className={styles.answerDisclaimerContainer}>
                     <span className={styles.answerDisclaimer}>AI-generated content may be incorrect</span>
+                    <span className={styles.answerDisclaimer}>Please fill out the survey after the conversation<a href={SURVEY_LINK || "#"} target="_blank">link</a></span>
                 </Stack.Item>
                 </Stack>
                 {chevronIsExpanded && 
