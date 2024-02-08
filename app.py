@@ -40,7 +40,7 @@ DATASOURCE_TYPE = os.environ.get("DATASOURCE_TYPE", "AzureCognitiveSearch")
 SEARCH_TOP_K = os.environ.get("SEARCH_TOP_K", 5)
 SEARCH_STRICTNESS = os.environ.get("SEARCH_STRICTNESS", 3)
 SEARCH_ENABLE_IN_DOMAIN = os.environ.get("SEARCH_ENABLE_IN_DOMAIN", "true")
-SURVEY_LINK = os.environ.get("SERVEY_LINK", "https://www.ncrvoyix.com")
+SURVEY_LINK = os.environ.get("SURVEY_LINK", "https://www.ncrvoyix.com")
 
 # ACS Integration Settings
 AZURE_SEARCH_SERVICE = os.environ.get("AZURE_SEARCH_SERVICE")
